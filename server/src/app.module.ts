@@ -1,13 +1,13 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { WeatherModule } from './weatherApi/weather.module';
-import {DatabaseModule} from './db/database.module';
-import {CatsModule} from './cats/cats.module';
-
+import { WeatherApiModule } from './weatherApi/weather.module';
+import { WeatherModule } from './weather/weathers.module';
+import { DatabaseModule } from './db/database.module';
+import { CatsModule } from './cats/cats.module';
 
 @Module({
-  imports: [WeatherModule, DatabaseModule, CatsModule],
+  imports: [WeatherModule, WeatherApiModule, DatabaseModule, CatsModule],
   controllers: [AppController],
   providers: [AppService],
 })

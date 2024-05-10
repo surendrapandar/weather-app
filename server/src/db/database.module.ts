@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
-import {Cat} from "../cats/cat.entity"
-import { WeatherModel } from 'src/weather/weather.model';
+import { Cat } from '../cats/cat.entity';
+import { WeatherModel } from 'src/weather/weathers.model';
 
 @Module({
   imports: [
@@ -13,6 +13,7 @@ import { WeatherModel } from 'src/weather/weather.model';
       password: 'somePassword',
       database: 'weather',
       models: [Cat, WeatherModel],
+      autoLoadModels: true,
     }),
   ],
 })
